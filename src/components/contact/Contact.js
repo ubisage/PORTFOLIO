@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "./contact.css"
 import sendSvg from "../../assets/send"
 
@@ -8,6 +9,22 @@ const Contact = () => {
   // const thread = ig.entity.directThread([userId.toString()]);
   // await thread.broadcastText('Message from node');
   //     }
+
+  // ========code related to emailJS=========== 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_qub2iny', 'template_pjjl3vn', form.current, 'NY9fF_YUiLw-0QuXG')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  };
+  // ==========================================
 
   return (
     <section className="contact section" id="contact">
@@ -73,7 +90,7 @@ const Contact = () => {
         <div className="contact__content">
           <h3 className="contact__title">Write me your project</h3>
 
-          <form className="contact__form" action="">
+          <form className="contact__form" ref={form} onSubmit={sendEmail}>
             <div className="contact__form-div">
               <label htmlFor="" className="contact__form-tag">
                 Name

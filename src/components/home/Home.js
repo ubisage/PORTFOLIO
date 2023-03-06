@@ -13,7 +13,7 @@ const Home = () => {
             <div className="home__content grid">
                 <Social/>
 
-                <div className="home__img"></div>
+                <div className="home__img" ><img src="../../assets/profile.jpg" alt="" /></div>
                 <Data/>
             </div>
             <ScrollDown/>
