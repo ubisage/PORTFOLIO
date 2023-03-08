@@ -2,7 +2,9 @@ import React from "react";
 import "./footer.css";
 import { PageViewCounts } from "./PageViewCounts";
 
+
 const Footer = () => {
+
   return (
     <footer className="footer">
       <div className="footer__container container">
@@ -57,7 +59,8 @@ const Footer = () => {
           </a>
         </div>
         <span className="footer__copyright">&#169; UBISAGE- <em>"you can use it as your portfolio"</em></span>
-        <span className="footer__pageViewCount">
+        <span className="footer__pageViewCount footer__copyright">
+
           <PageViewCounts/>
         </span>
       </div>

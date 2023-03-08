@@ -1,0 +1,7 @@
+.footer__page-view-count{
+    display: block;
+    margin-top: 4.5rem;
+    color: var(--title-color-dark);
+    text-align: center;
+    font-size: var(--font-size);
+}
