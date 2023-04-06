@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./testimonial.css";
-import { Data } from './Data';
+import { Data } from "./Data";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,17 +13,16 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination } from "swiper";
 
-
 const Testimonials = () => {
   return (
     <section className="testimonial container section">
       <h2 className="section__title">Testimonials</h2>
       <span className="section__subtitle">What my Clients say</span>
 
-        <Swiper className="testimonial__container"
-        loop={true}
-        
-    
+      <Swiper
+        className="testimonial__container"
+        // loop={true}
+
         grabCursor={true}
         spaceBetween={24}
         autoplay={{
@@ -36,27 +35,26 @@ const Testimonials = () => {
         breakpoints={{
           576: {
             slidesPerView: 1,
-            
           },
           768: {
             slidesPerView: 1,
             spaceBetween: 48,
-          }
-         }}
-        modules={[Autoplay,Pagination]}
-        >
-            {Data.map(({id, image, title, description})=>{
-                return (
-                    <SwiperSlide className="testimonial__card" key={id}>
-                        <img src={image} alt={title} className="testimonial__img" />
-                        <h3 className="testimonial__name">{title}</h3>
-                        <p className="testimonial__description">{description}</p>
-                    </SwiperSlide>
-                )
-            })}
-        </Swiper>
+          },
+        }}
+        modules={[Autoplay, Pagination]}
+      >
+        {Data.map(({ id, image, title, description }) => {
+          return (
+            <SwiperSlide className="testimonial__card" key={id}>
+              <img src={image} alt={title} className="testimonial__img" />
+              <h3 className="testimonial__name">{title}</h3>
+              <p className="testimonial__description">{description}</p>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;
